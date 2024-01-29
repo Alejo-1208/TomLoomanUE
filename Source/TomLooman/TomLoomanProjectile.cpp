@@ -3,6 +3,7 @@
 #include "TomLoomanProjectile.h"
 #include "GameFramework/ProjectileMovementComponent.h"
 #include "Components/SphereComponent.h"
+#include <Kismet/GameplayStatics.h>
 
 ATomLoomanProjectile::ATomLoomanProjectile() 
 {
@@ -40,4 +41,7 @@ void ATomLoomanProjectile::OnHit(UPrimitiveComponent* HitComp, AActor* OtherActo
 
 		Destroy();
 	}
+
+	UGameplayStatics::SpawnEmitterAtLocation(GetWorld(), ExplosionEffect, GetActorLocation());
+	
 }

@@ -8,6 +8,7 @@
 
 class USphereComponent;
 class UProjectileMovementComponent;
+class UParticleSystem;
 
 UCLASS(config=Game)
 class ATomLoomanProjectile : public AActor
@@ -21,6 +22,9 @@ class ATomLoomanProjectile : public AActor
 	/** Projectile movement component */
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = Movement, meta = (AllowPrivateAccess = "true"))
 	UProjectileMovementComponent* ProjectileMovement;
+
+	UPROPERTY(EditDefaultsOnly, Category = "FX")
+	UParticleSystem* ExplosionEffect;
 
 public:
 	ATomLoomanProjectile();
